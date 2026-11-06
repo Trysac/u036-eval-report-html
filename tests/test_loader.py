@@ -138,7 +138,9 @@ def test_empty_folder_gives_no_runs(tmp_path: Path) -> None:
         json.dumps(make_doc(cases=[1])),
         json.dumps(make_doc(cases=[{"id": "c", "passed": "yes", "scores": {}, "output": ""}])),
         json.dumps(make_doc(cases=[{"id": 1, "passed": True, "scores": {}, "output": ""}])),
-        json.dumps(make_doc(cases=[{"id": "c", "passed": True, "scores": {"s": "x"}, "output": ""}])),
+        json.dumps(
+            make_doc(cases=[{"id": "c", "passed": True, "scores": {"s": "x"}, "output": ""}])
+        ),
         json.dumps(make_doc(cases=[{"id": "c", "passed": True, "scores": {}, "output": 3}])),
         json.dumps(make_doc(cases=[{"id": "c", "passed": True, "scores": {}}])),
         json.dumps(make_doc(run_id="x" * 100_001)),

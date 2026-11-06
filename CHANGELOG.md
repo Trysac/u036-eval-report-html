@@ -9,4 +9,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Add `eval-report build` and the `eval_report_html` API (`load_runs`, `trend_svg`, `render_report`) to turn folders of evaluation result JSON files into one offline, script-free HTML report with summary deltas, per-case tables and inline SVG trends.
 - Initial project structure from the factory utility template.

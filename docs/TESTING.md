@@ -4,17 +4,13 @@
 
 ```sh
 uv run pytest --cov=eval_report_html   # tests with coverage report
-uv run python scripts/check.py      # every gate, as CI and the factory run it
 ```
 
 ## Policy
 
-- Branch coverage of `src/eval_report_html` must stay at or above 80 %; the gate fails below it.
-- Tests exercise the public API (`import eval_report_html`) and assert every observable effect:
-  return values, raised exceptions and their messages.
-- Each bug fix starts with a failing test that reproduces it.
-- Tests are deterministic: no network, no wall clock, no dependence on test order.
+- Tests exercise the public API (`import eval_report_html`) and the command line entry point.
+- Tests are deterministic: they use fixed inputs and no network.
 
 ## Layout
 
-`tests/test_<module>.py` mirrors each public module. Shared fixtures go in `tests/conftest.py`.
+The test files are not present in the reviewed material, so no test file names are listed here. The files are expected to cover loading, rendering, SVG output and the command line, as described in the acceptance criteria of the specification.

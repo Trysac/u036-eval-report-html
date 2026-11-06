@@ -2,12 +2,12 @@
 
 ## Objective
 
-Generate one self-contained, script-free static HTML report from evaluation result JSON files, with per-run tables and SVG trend lines
+Generate one self-contained, script-free static HTML report from evaluation result JSON files, with per-run tables and SVG trend lines. The problem addressed: evaluation results sit as JSON in CI artifacts and trends across runs are not visible, while dashboards need servers and accounts.
 
 ## Scope
 
-- In scope: the public API documented in [README.md](../README.md), typed and tested.
-- Out of scope: anything that needs runtime dependencies or I/O without an accepted ADR.
+- In scope: loading and validating a folder of result JSON files; rendering one offline HTML report with a latest-run summary and deltas, a per-metric inline SVG trend, and a per-case table; the `eval-report build` command line interface.
+- Out of scope: interactivity, hosting, PDF output. No runtime dependencies.
 
 ## Timeline
 

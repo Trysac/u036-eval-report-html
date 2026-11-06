@@ -19,6 +19,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+eval-report-html = "eval_report_html.__main__:main"
+
 [project.urls]
 Homepage = "https://github.com/Trysac/u036-eval-report-html"
 Source = "https://github.com/Trysac/u036-eval-report-html"

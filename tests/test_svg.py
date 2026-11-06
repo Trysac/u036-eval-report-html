@@ -19,7 +19,7 @@ def test_flat_series_is_drawn_at_mid_height() -> None:
     svg = trend_svg([0.3, 0.3])
     assert '<polyline points="4.00,40.00 316.00,40.00"' in svg
     assert svg.count("<polyline") == 1
-    assert "y=\"40.00\"" not in svg or "40.00" in svg
+    assert 'y="40.00"' not in svg or "40.00" in svg
 
 
 def test_single_value_is_centered() -> None:

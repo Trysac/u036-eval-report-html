@@ -94,9 +94,7 @@ def test_oversized_file_exits_two_and_keeps_output(
     assert "input_too_large" in capsys.readouterr().err
 
 
-def test_empty_folder_is_invalid_input(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_empty_folder_is_invalid_input(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     folder = tmp_path / "empty"
     folder.mkdir()
     target = tmp_path / "report.html"

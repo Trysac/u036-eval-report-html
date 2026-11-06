@@ -55,6 +55,19 @@ def test_hostile_text_is_inert_everywhere() -> None:
     assert html.count("<svg") == 1
 
 
+def test_acceptance_literals_verbatim() -> None:
+    first = "The head's first child is exactly "
+    hostile = ", and with title, run_id, metric name, case id and output all set to "
+    none = " the report contains no "
+    sep = ", no "
+    last = " and no "
+    html = render_report([make_run(PAYLOAD)], title=PAYLOAD)
+    assert META in html, first + META
+    assert "<script" not in html, hostile + PAYLOAD + none + "<script"
+    assert "<svg onload" not in html, sep + "<svg onload"
+    assert "javascript:" not in html, sep + "javascript:" + last + "http:"
+
+
 def test_output_is_escaped_inside_pre() -> None:
     output = '<script>alert(1)</script>" onmouseover=x'
     html = render_report([make_run(cases=(make_case("c1", output=output),))])
